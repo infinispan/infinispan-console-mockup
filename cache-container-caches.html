@@ -399,8 +399,8 @@
 
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Name</label>
-                        <div class="col-md-8" >
+                        <label class="col-md-4 control-label">* Name:</label>
+                        <div class="col-md-6" >
                             <input type="text" class="form-control" name="cacheName" ng-model="data.name" ng-disabled="readOnly" required="" >
                         </div>
                         <div class="col-md-2 pull-left" style="padding-left: 0">
@@ -409,26 +409,31 @@
                         <!-- ngIf: form.cacheName.$invalid && !form.cacheName.$pristine -->
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Type</label>
+                        <label class="col-md-4 control-label">* Base configuration:</label>
+                        <div class="col-md-6">
+                            <select ng-model="data.type" class="form-control"
+                                    onchange="if( this.value=='-- NONE --') {document.getElementById('type').style.display='block';} else {document.getElementById('type').style.display='none';}"
+                                    >
+                                <option selected="selected">-- Select base configuration --</option>
+                                <option>-- NONE --</option>
+                                <option label="My template 1">My template 1</option><option value="string:local-cache" label="local-cache">My template 2</option><option value="string:replicated-cache" label="replicated-cache">replicated-cache</option><option value="string:invalidation-cache" label="invalidation-cache">My template 3</option></select>
 
-                        <div class="col-md-8">
+                        </div>
+                        <div class="col-md-2 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+                    <div class="form-group" id="type" style="display: none">
+                        <label class="col-md-4 control-label">* Type:</label>
+
+                        <div class="col-md-6">
                             <select ng-model="data.type" ng-options="ct as ct for ct in cacheTypes" ng-disabled="readOnly" class="form-control"  ><option value="string:distributed-cache" label="distributed-cache" selected="selected">distributed-cache</option><option value="string:local-cache" label="local-cache">local-cache</option><option value="string:replicated-cache" label="replicated-cache">replicated-cache</option><option value="string:invalidation-cache" label="invalidation-cache">invalidation-cache</option></select>
                         </div>
                         <div class="col-md-2 pull-left" style="padding-left: 0">
                             <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Template</label>
 
-                        <div class="col-md-8">
-                            <select ng-model="data.type" class="form-control"  ><option value="string:distributed-cache" label="My template 1" selected="selected">My template 1</option><option value="string:local-cache" label="local-cache">My template 2</option><option value="string:replicated-cache" label="replicated-cache">replicated-cache</option><option value="string:invalidation-cache" label="invalidation-cache">My template 3</option></select>
-
-                        </div>
-                        <div class="col-md-1 pull-left" style="padding-left: 0">
-                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
-                        </div>
-                    </div>
                 </form>
             </div>
             <div class="modal-footer">
