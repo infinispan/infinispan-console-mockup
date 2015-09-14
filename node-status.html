@@ -32,11 +32,15 @@
     <link href="patternfly/css/patternfly-additions.min.css" rel="stylesheet" media="screen, print">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen, print">
     <link href="css/styles.css" rel="stylesheet" media="screen, print">
+
     <script src="components/jquery/dist/jquery.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="components/datatables/media/js/jquery.dataTables.js"></script>
     <script src="components/matchHeight/jquery.matchHeight-min.js"></script>
     <script src="components/c3/c3.min.js"></script>
     <script src="components/d3/d3.min.js"></script>
-    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+
     <script src="patternfly/js/patternfly.js"></script>
     <script src="js/globals.js"></script>
     <style>
@@ -325,7 +329,8 @@
         </div>
 
         <div class="col-md-12">
-            <table class="table table-bordered">
+
+            <table class="datatable table table-striped table-bordered display" id="cachesTable">
                 <thead>
                 <tr><th>Name</th>
                     <th>Average reads</th>
@@ -422,6 +427,13 @@
     });
 </script>
 
+
+<script>
+    // Initialize Datatables
+    $(document).ready(function() {
+        $('#cachesTable').dataTable();
+    });
+</script>
 
 </body>
 </html>
