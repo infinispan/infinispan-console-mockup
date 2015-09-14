@@ -111,10 +111,10 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-primary">
-            <li class="active">
+            <li>
                 <a href="cache-containers.html">Caches</a>
             </li>
-            <li>
+            <li class="active">
                 <a href="clusters.html">Clusters</a>
             </li>
         </ul>
@@ -125,13 +125,12 @@
         <div class="col-sm-12 col-md-12">
             <ol class="breadcrumb">
                 <li>
-                    <a href="cache-containers.html">Cache containers</a>
+                    <a href="clusters.html">Clusters</a>
                 </li>
-                <li>
-                    <a href="cache-container-caches.html">My cache container 1</a>
-                </li>
-                <li class="active"><strong>MyCache</strong></li>
+                <li ><a href="cluster-nodes.html">JDG Cluster #1</a></li>
+                <li class="active"><strong>Cluster node: Node #1</strong></li>
             </ol>
+
             <div class="dropdown pull-right">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown">
@@ -155,101 +154,18 @@
                     </li>
                 </ul>
             </div>
-            <h1><span class="label label-success">Available</span> MyCache | <span class="text-success"><span class="spinner spinner-xs spinner-inline" title="Cache is under some temporary condition"></span> Rebalancing</span>| <span class="text-success"><span class="spinner spinner-xs spinner-inline" title="Cache is under some temporary condition"></span> Indexing</span></h1>
+            <h1><span class="label label-success">Available</span> Node #1  <small>(2,454 entries)</small> </h1>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <!--ul class="nav nav-tabs nav-tabs-pf"-->
-            <ul class="nav nav-tabs nav-tabs">
-                <li class="active"><a href="#">General status</a></li>
-                <li><a href="#">Nodes</a></li>
-            </ul>
-        </div>
-    </div>
-
     <!--div class="cards-pf" style="padding:20px"-->
-    <div style="padding-top: 20px">
+    <div style="padding-top: 0px">
         <div class="row row-cards-pf">
-            <div class="col-xs-1 col-sm-1 col-md-1">
-                <div class="card-pf card-pf-accented card-pf-aggregate-status card-pf-with-action"
-                     style="height: 40px;">
-                    <h2 class="card-pf-title" style="height: 17px;">
-                        <span class="fa fa-database" title="Persistent"></span> Persistant
-                    </h2>
-                </div>
-            </div>
-            <div class="col-xs-1 col-sm-1 col-md-1">
-                <div class="card-pf card-pf-accented    card-pf-aggregate-status card-pf-with-action"
-                     style="height: 40px;">
-                    <h2 class="card-pf-title" style="height: 17px;">
-                        <span class="fa fa-arrow-circle-o-down" title="Transactional"></span> Transactional
-                    </h2>
-                </div>
-            </div>
-            <div class="col-xs-1 col-sm-1 col-md-1">
-                <div class="card-pf    card-pf-accented card-pf-aggregate-status card-pf-with-action"
-                     style="height: 40px;">
-                    <h2 class="card-pf-title" style="height: 17px;">
-                        <span class="fa fa-stack-overflow" title="Bounded"></span> Bounded
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-cards-pf">
-            <!-- BEGIN CARD -->
-            <div class="col-xs-2 col-sm-2 col-md-2">
-                <div class="card-pf card-pf-accented ispn-card">
-                    <div class="card-pf-heading">
-                        <h2 class="card-pf-title">Cache content</h2>
-                    </div>
-                    <div class="card-pf-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="col-md-12">
-                                    <tr>
-                                        <th># Entries</th>
-                                        <td>44.544.545</td>
-                                    </tr>
-                                    <tr>
-                                        <th>READ / WRITE ration</th>
-                                        <td>48.33</td>
-                                    </tr>
-                                    <tr>
-                                        <th>HIT ration</th>
-                                        <td>49.4</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Max capacity:</th>
-                                        <td>458.4544</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" style="padding-top: 10px">
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="50"
-                                                     aria-valuemin="0"
-                                                     aria-valuemax="100" style="width: 50%;">
-                                                    <span>340 / 680 - 50%</span>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END CARD -->
 
             <!-- BEGIN CARD -->
             <div class="col-xs-2 col-sm-2 col-md-2">
                 <div class="card-pf card-pf-accented ispn-card">
                     <div class="card-pf-heading">
-                        <h2 class="card-pf-title">Operations performance</h2>
+                        <h2 class="card-pf-title">Performance</h2>
                     </div>
                     <div class="card-pf-body">
                         <div class="row">
@@ -274,6 +190,7 @@
                 </div>
             </div>
             <!-- END CARD -->
+
 
             <!-- BEGIN CARD -->
             <div class="col-xs-2 col-sm-2 col-md-2">
@@ -313,9 +230,7 @@
             </div>
             <!-- END CARD -->
 
-        </div>
 
-        <div class="row row-cards-pf">
 
             <!-- BEGIN CARD -->
             <div class="col-xs-2 col-sm-2 col-md-2">
@@ -351,63 +266,68 @@
             </div>
             <!-- END CARD -->
 
-            <!-- BEGIN CARD -->
-            <div class="col-xs-2 col-sm-2 col-md-2">
-                <div class="card-pf card-pf-accented ispn-card">
-                    <div class="card-pf-heading">
-                        <h2 class="card-pf-title">Cache loader</h2>
-                    </div>
-                    <div class="card-pf-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="col-md-12">
-                                    <tr>
-                                        <th># Loads</th>
-                                        <td>3.343</td>
-                                    </tr>
-                                    <tr>
-                                        <th># Misses</th>
-                                        <td>544</td>
-                                    </tr>
-                                    <tr>
-                                        <th># Stores</th>
-                                        <td>4.454</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END CARD -->
 
-            <!-- BEGIN CARD -->
-            <div class="col-xs-2 col-sm-2 col-md-2">
-                <div class="card-pf card-pf-accented ispn-card ispn-card">
-                    <div class="card-pf-heading">
-                        <h2 class="card-pf-title">Locking</h2>
-                    </div>
-                    <div class="card-pf-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="col-md-12">
-                                    <tr>
-                                        <th># Locks available</th>
-                                        <td>3.343</td>
-                                    </tr>
-                                    <tr>
-                                        <th># Locks held</th>
-                                        <td>544</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END CARD -->
+        </div>
 
 
+        <div class="row">
+
+            <div class="col-md-12">
+
+            <h2>Deployed caches</h2>
+        </div>
+
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                <tr><th>Name</th>
+                    <th>Average reads</th>
+                    <th>Average writes</th>
+                    <th>Total entries</th>
+                    <th>Total reads</th>
+                    <th>Total failed reads</th>
+                    <th>Total writes</th>
+                    <th>Total failed writes</th>
+                </tr></thead>
+                <tbody><!-- ngRepeat: stats in currentNodeStats.cacheStats --><tr ng-repeat="stats in currentNodeStats.cacheStats" class="ng-scope">
+                    <td class="ng-binding">default</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                </tr><!-- end ngRepeat: stats in currentNodeStats.cacheStats --><tr ng-repeat="stats in currentNodeStats.cacheStats" class="ng-scope">
+                    <td class="ng-binding">memcachedCache</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                </tr><!-- end ngRepeat: stats in currentNodeStats.cacheStats --><tr ng-repeat="stats in currentNodeStats.cacheStats" class="ng-scope">
+                    <td class="ng-binding">namedCache</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                </tr><!-- end ngRepeat: stats in currentNodeStats.cacheStats --><tr ng-repeat="stats in currentNodeStats.cacheStats" class="ng-scope">
+                    <td class="ng-binding">transactionalCache</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                    <td class="ng-binding">0</td>
+                </tr><!-- end ngRepeat: stats in currentNodeStats.cacheStats -->
+                </tbody></table>
+        </div>
         </div>
     </div>
 </div>
