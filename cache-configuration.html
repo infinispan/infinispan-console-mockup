@@ -130,21 +130,7 @@
                 <li><a href="cache-status.html">MyCache</a></li>
                 <li class="active"><strong>Configuration</strong></li>
             </ol>
-            <div class="dropdown pull-right">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown">
-                    ACTIONS
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Refresh</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Stop</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Start</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Delete</a>
-                    </li>
-                </ul>
-            </div>
+
             <h1><span class="label label-success">Available</span> MyCache <small>(Distributed, Sync, 2 owners)</small> | <span class="text-success"><span class="spinner spinner-xs spinner-inline" title="Cache is under some temporary condition"></span> Rebalancing</span>| <span class="text-success"><span class="spinner spinner-xs spinner-inline" title="Cache is under some temporary condition"></span> Indexing</span></h1>
         </div>
     </div>
@@ -175,7 +161,7 @@
                     <span class="fa fa-filter" title="Persistent"></span> Cache properties saved.
                 </div>
 
-                    <div class="form-group">
+                <div class="form-group">
                         <label class="col-md-2 control-label">Name</label>
                         <div class="col-md-6" >
                             <input type="text" class="form-control" name="cacheName" ng-model="data.name" ng-disabled="readOnly" required="" >
