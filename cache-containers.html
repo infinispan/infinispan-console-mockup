@@ -101,6 +101,9 @@
             <li>
                 <a href="clusters.html">Clusters</a>
             </li>
+            <li>
+                <a href="events.html">Grid events</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -123,57 +126,57 @@
                 </tr>
 
                 <tr>
-                    <td><span class="label label-success">AVAILABLE</span></td>
-                    <td><strong><a href="cache-container-caches.html">My cache container 1</a></strong></td>
-                    <td><span class="label label-default">113</span></td>
-                    <td><a href="clustering.html">JDG Cluster 1</a><br>
+                    <td style="padding: 10px"><span class="label label-success">AVAILABLE</span></td>
+                    <td style="padding: 10px"><strong><a href="cache-container-caches.html">My cache container 1</a></strong></td>
+                    <td style="padding: 10px"><span class="label label-default">113</span></td>
+                    <td style="padding: 10px"><a href="clustering.html">JDG Cluster 1</a><br>
                         <small>TCP, UDP</small>
                     </td>
-                    <td>
+                    <td style="padding: 10px">
                         HotRod: 5554, SSL<br>
                         REST: 4345<br>
                         Memcached: 4545<br>
                     </td>
-                    <td>
+                    <td style="padding: 10px">
                         New York<br>
                         Boston
                     </td>
                 </tr>
 
                 <tr>
-                    <td><span class="label label-danger">DEGRADED</span></td>
-                    <td><strong><a href="cache-container-caches.html">My cache container 1</a></strong>
+                    <td style="padding: 10px"><span class="label label-danger">DEGRADED</span></td>
+                    <td style="padding: 10px"><strong><a href="cache-container-caches.html">My cache container 1</a></strong>
                         <br>
                         <span class="icon-class pficon-warning-triangle-o"></span> Inconsistency found<br>
                         <span class="icon-class pficon-history"></span> Degraded performance<br>
                     </td>
-                    <td><span class="label label-default">4</span></td>
-                    <td><a href="clustering.html">JDG Cluster 1</a><br>
+                    <td style="padding: 10px"><span class="label label-default">4</span></td>
+                    <td style="padding: 10px"><a href="clustering.html">JDG Cluster 1</a><br>
                         <small>TCP, UDP</small>
                     </td>
-                    <td>
+                    <td style="padding: 10px">
                         HotRod: 5554, SSL<br>
                         REST: 4345<br>
                         Memcached: 4545<br>
                     </td>
-                    <td>
+                    <td style="padding: 10px">
                         New York<br>
                         Boston
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="label label-info">STOPPED</span></td>
-                    <td><strong><a href="cache-container-caches.html">My cache container 3</a></strong></td>
-                    <td><span class="label label-default">66</span></td>
-                    <td><a href="clustering.html">JDG Cluster 1</a><br>
+                    <td style="padding: 10px"><span class="label label-info">STOPPED</span></td>
+                    <td style="padding: 10px"><strong><a href="cache-container-caches.html">My cache container 3</a></strong></td>
+                    <td style="padding: 10px"><span class="label label-default">66</span></td>
+                    <td style="padding: 10px"><a href="clustering.html">JDG Cluster 1</a><br>
                         <small>TCP, UDP</small>
                     </td>
-                    <td>
+                    <td style="padding: 10px">
                         HotRod: 5554, SSL<br>
                         REST: 4345<br>
                         Memcached: 4545<br>
                     </td>
-                    <td>
+                    <td style="padding: 10px">
                         New York<br>
                         Boston
                     </td>
@@ -186,28 +189,29 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Split
-                        brain detected.</h3>
-
-                    <p class="list-group-item-text">Nulla lacinia lorem quis enim posuere dictum.</p>
+                    <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Cluster 'Cluster #1': Split
+                        detected.</h3>
                     <small>Thu Sep 3 16:10:02 CEST 2015</small>
                 </li>
                 <li class="list-group-item">
-                    <h3 class="list-group-item-heading"><span class="icon-class pficon-history"></span> Degraded mode
-                        entered.</h3>
-
-                    <p class="list-group-item-text">Nulla lacinia lorem quis enim posuere dictum.</p>
+                    <h3 class="list-group-item-heading"><span class="icon-class pficon-info"></span> Cluster 'Cluster #1': Rebalancing started.</h3>
                     <small>Thu Sep 3 16:10:02 CEST 2015</small>
                 </li>
                 <li class="list-group-item">
-                    <h3 class="list-group-item-heading">Nunc viverra purus libero</h3>
-
-                    <p class="list-group-item-text">Nulla lacinia lorem quis enim posuere dictum.</p>
+                    <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Site 'New York': Status is down.</h3>
+                    <small>Thu Sep 3 16:10:02 CEST 2015</small>
+                </li>
+                <li class="list-group-item">
+                    <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Node 'MyNode#1': Joining cluster.</h3>
+                    <small>Thu Sep 3 16:10:02 CEST 2015</small>
+                </li>
+                <li class="list-group-item">
+                    <h3 class="list-group-item-heading"><span class="icon-class pficon-info"></span> Task 'Do dome calculations': Completed without errors.</h3>
                     <small>Thu Sep 3 16:10:02 CEST 2015</small>
                 </li>
 
             </ul>
-            <p><a href="#">See all events</a></p>
+            <p><a href="events.html">See all events</a></p>
         </div>
         <!-- /col -->
     </div>
