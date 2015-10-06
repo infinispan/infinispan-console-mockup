@@ -103,10 +103,12 @@
                     <li role="presentation" class="divider"></li>
                     <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Delete</a>
                     <li role="presentation" class="divider"></li>
-                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Enable partition handling</a>
-                    <li role="presentation" ><a role="menuitem" href="#">Disable partition handling</a>
+                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Enable partition
+                        handling</a>
+                    <li role="presentation"><a role="menuitem" href="#">Disable partition handling</a>
                     <li role="presentation" class="divider"></li>
-                    <li role="presentation" ><a role="menuitem" href="cache-container-configuration-schemas.html">View / Edit configuration</a>
+                    <li role="presentation"><a role="menuitem" href="cache-container-configuration-schemas.html">View /
+                        Edit configuration</a>
                     </li>
                 </ul>
             </div>
@@ -117,7 +119,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <ul class="nav nav-tabs">
-                <li ><a href="cache-container-caches.html">Caches</a></li>
+                <li><a href="cache-container-caches.html">Caches</a></li>
                 <li><a href="cache-container-tasks-execution.html">Tasks execution</a></li>
                 <li class="active"><a href="cache-container-endpoints.html">Endpoints</a></li>
             </ul>
@@ -126,12 +128,143 @@
 
 
     <div class="row">
-        <div class="col-sm-9 col-md-10 col-sm-push-3 col-md-push-2" id="cache-cards">
-            <br />
+        <div class="col-sm-12 col-md-12">
+            <br>
+            <h4><span class="pficon pficon-info"></span> Current status of remote endpoints:</h4>
+            <br>
+            <table class="table ispn-table datatable table table-striped">
+                <tr>
+                    <th style="width: 50px">Status</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Socket binding</th>
+                    <th>Bytes read</th>
+                    <th>Bytes written</th>
+                    <th>Configuration properties</th>
+                </tr>
+                <!-- CONNECTOR -->
+                <tr>
+                    <td style="padding: 10px"><span class="label label-danger">Error</span></td>
+                    <td style="padding: 10px">Hot Rod</td>
+                    <td style="padding: 10px">My remote connector #1</td>
+                    <td style="padding: 10px">127.0.0.1:6767</td>
+                    <td style="padding: 10px">
+                        3,405 KB
+                    </td>
+                    <td style="padding: 10px">
+                        6,405 KB
+                    </td>
+                    <td style="padding: 10px">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>worker-threads</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>idle-timeout</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>tcp-nodelay</td>
+                                <td>enabled</td>
+                            </tr>
+                            <tr>
+                                <td>send-buffer-size</td>
+                                <td>1024</td>
+                            </tr>
+                            <tr>
+                                <td>receive-buffer-size</td>
+                                <td>1024</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- END OF CONNECTOR -->
+
+                <!-- CONNECTOR -->
+                <tr>
+                    <td style="padding: 10px"><span class="label label-success">Success</span></td>
+                    <td style="padding: 10px">memcached-connector</td>
+                    <td style="padding: 10px">My memcached connector #1</td>
+                    <td style="padding: 10px">127.0.0.1:3434</td>
+                    <td style="padding: 10px">
+                        3,405 KB
+                    </td>
+                    <td style="padding: 10px">
+                        6,405 KB
+                    </td>
+                    <td style="padding: 10px">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>worker-threads</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>idle-timeout</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>tcp-nodelay</td>
+                                <td>enabled</td>
+                            </tr>
+                            <tr>
+                                <td>send-buffer-size</td>
+                                <td>1024</td>
+                            </tr>
+                            <tr>
+                                <td>receive-buffer-size</td>
+                                <td>1024</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- END OF CONNECTOR -->
+
+                <!-- CONNECTOR -->
+                <tr>
+                    <td style="padding: 10px"><span class="label label-success">Success</span></td>
+                    <td style="padding: 10px">REST connector</td>
+                    <td style="padding: 10px">My REST connector #1</td>
+                    <td style="padding: 10px">127.0.0.1:8989</td>
+                    <td style="padding: 10px">
+                        3,405 KB
+                    </td>
+                    <td style="padding: 10px">
+                        6,405 KB
+                    </td>
+                    <td style="padding: 10px">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>worker-threads</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>idle-timeout</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>tcp-nodelay</td>
+                                <td>enabled</td>
+                            </tr>
+                            <tr>
+                                <td>send-buffer-size</td>
+                                <td>1024</td>
+                            </tr>
+                            <tr>
+                                <td>receive-buffer-size</td>
+                                <td>1024</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- END OF CONNECTOR -->
+
+            </table>
 
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
