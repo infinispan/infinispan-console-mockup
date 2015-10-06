@@ -102,6 +102,9 @@
                 <li class="active">
                     <a href="clusters.html">Clusters</a>
                 </li>
+                <li>
+                    <a href="events.html">Status events</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -123,49 +126,49 @@
                     </tr>
 
                     <tr>
-                        <td><span class="label label-success">STARTED</span></td>
-                        <td><strong><a href="cluster-nodes.html">Cluster #1</a></strong></td>
-                        <td><span class="label label-default">10</span></td>
-                        <td><span class="label label-default">10</span></td>
+                        <td style="padding: 10px"><span class="label label-success">STARTED</span></td>
+                        <td style="padding: 10px"><strong><a href="cluster-nodes.html">Cluster #1</a></strong></td>
+                        <td style="padding: 10px"><span class="label label-default">10</span></td>
+                        <td style="padding: 10px"><span class="label label-default">10</span></td>
                     </tr>
 
                     <tr>
-                        <td><span class="label label-info">STOPPED</span></td>
-                        <td><strong><a href="cluster-nodes.html">Cluster #2</a></strong></td>
-                        <td><span class="label label-default">10</span></td>
-                        <td><span class="label label-default">10</span></td>
+                        <td style="padding: 10px"><span class="label label-info">STOPPED</span></td>
+                        <td style="padding: 10px"><strong><a href="cluster-nodes.html">Cluster #2</a></strong></td>
+                        <td style="padding: 10px"><span class="label label-default">10</span></td>
+                        <td style="padding: 10px"><span class="label label-default">10</span></td>
                     </tr>
-
                 </table>
             </div>
             <div class="col-sm-4 col-md-3 sidebar-pf sidebar-pf-right" style="min-height: 923px;">
                 <div class="sidebar-header sidebar-header-bleed-left sidebar-header-bleed-right">
-                    <h2 class="h5">Latest Grid Events:</h2>
+                    <h2 class="h5">Latest status Events:</h2>
                 </div>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Split
-                        brain detected.</h3>
-
-                        <p class="list-group-item-text">Nulla lacinia lorem quis enim posuere dictum.</p>
+                        <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Cluster 'Cluster #1': Split
+                        detected.</h3>
                         <small>Thu Sep 3 16:10:02 CEST 2015</small>
                     </li>
                     <li class="list-group-item">
-                        <h3 class="list-group-item-heading"><span class="icon-class pficon-history"></span> Degraded mode
-                        entered.</h3>
-
-                        <p class="list-group-item-text">Nulla lacinia lorem quis enim posuere dictum.</p>
+                        <h3 class="list-group-item-heading"><span class="icon-class pficon-info"></span> Cluster 'Cluster #1': Rebalancing started.</h3>
                         <small>Thu Sep 3 16:10:02 CEST 2015</small>
                     </li>
                     <li class="list-group-item">
-                        <h3 class="list-group-item-heading">Nunc viverra purus libero</h3>
-
-                        <p class="list-group-item-text">Nulla lacinia lorem quis enim posuere dictum.</p>
+                        <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Site 'New York': Status is down.</h3>
+                        <small>Thu Sep 3 16:10:02 CEST 2015</small>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="list-group-item-heading"><span class="icon-class pficon-warning-triangle-o"></span> Node 'MyNode#1': Joining cluster.</h3>
+                        <small>Thu Sep 3 16:10:02 CEST 2015</small>
+                    </li>
+                    <li class="list-group-item">
+                        <h3 class="list-group-item-heading"><span class="icon-class pficon-info"></span> Task 'Do dome calculations': Completed without errors.</h3>
                         <small>Thu Sep 3 16:10:02 CEST 2015</small>
                     </li>
 
                 </ul>
-                <p><a href="#">See all events</a></p>
+                <p><a href="events.html">See all events</a></p>
             </div>
             <!-- /col -->
         </div>
