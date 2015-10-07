@@ -109,25 +109,24 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-12 col-md-12" style="padding-top: 15px;padding-bottom: 15px">
-
-            <div class="btn-group" role="group">
-                <a href="#" role="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><span
-                        class="pficon pficon-add-circle-o"></span> Create new template</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
         <div class="col-sm-12 col-md-12">
 
             <table class="datatable table table-striped table-bordered">
                 <thead>
                 <tr>
+                    <th colspan="6" class="text-right">
+                        <div class="btn-group" role="group">
+                            <a href="#" role="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><span
+                                    class="pficon pficon-add-circle-o"></span> Create new template</a>
+                        </div>
+
+                    </th>
+                </tr>
+                <tr>
                     <th>Name</th>
                     <th>Type</th>
                     <th>Mode</th>
-                    <th>Other attributes</th>
+                    <th>Traits</th>
                     <th class="col-sm-1">Actions</th>
                 </tr>
                 </thead>
@@ -208,7 +207,6 @@
                         <div class="col-md-2 pull-left" style="padding-left: 0">
                             <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
                         </div>
-
                     </div>
                     <div class="form-group" id="type" >
                         <label class="col-md-4 control-label">* Cache type:</label>
@@ -216,6 +214,22 @@
                         <div class="col-md-6">
                             <select  class="form-control"
                                     ><option value="string:distributed-cache" label="distributed-cache" selected="selected">distributed-cache</option><option value="string:local-cache" label="local-cache">local-cache</option><option value="string:replicated-cache" label="replicated-cache">replicated-cache</option><option value="string:invalidation-cache" label="invalidation-cache">invalidation-cache</option></select>
+                        </div>
+                        <div class="col-md-2 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+                    <div class="form-group" id="type" >
+                        <label class="col-md-4 control-label">Base template:</label>
+
+                        <div class="col-md-6">
+                            <select  class="form-control"
+                                    >
+                                <option>My Template 1</option>
+                                <option>My Template 2</option>
+                                <option>My Template 3</option>
+                                <option>My Template 4</option>
+                                </select>
                         </div>
                         <div class="col-md-2 pull-left" style="padding-left: 0">
                             <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
