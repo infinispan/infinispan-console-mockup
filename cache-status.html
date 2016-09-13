@@ -40,6 +40,12 @@
     <script src="patternfly/js/patternfly.js"></script>
     <script src="components/nouislider/nouislider.js"></script>
 
+    <script src="components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="components/matchHeight/jquery.matchHeight-min.js"></script>
+    <script src="components/c3/c3.min.js"></script>
+    <script src="components/d3/d3.min.js"></script>
+
+
     <style>
         table.ispn-aligned tr td {
             vertical-align: middle;
@@ -440,6 +446,39 @@
             </div>
             <!-- END CARD -->
 
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="card-pf card-pf-accented ispn-card">
+                    <div class="card-pf-heading">
+                        <h2 class="card-pf-title">Memory usage</h2>
+                    </div>
+                    <div class="card-pf-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="jvm-heap-chart"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 20px">
+                            <table class="col-sm-12 col-xs-12 col-md-12 table">
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th class="small" style="text-align: center"><strong>JVM</strong></th>
+                                    <th class="small" style="text-align: center"><strong>OFF HEAP</strong></th>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: center"><strong>MAX</strong></th>
+                                    <td class="small" style="text-align: center">4 GB</td>
+                                    <td class="small" style="text-align: center">5.56 GB</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: center"><strong>USED</strong></th>
+                                    <td class="small" style="text-align: center">4 GB</td>
+                                    <td class="small" style="text-align: center">5.56 GB</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -450,6 +489,43 @@
     $('.ispn-card').matchHeight({byRow: false});
 </script>
 
+
+<script>
+    $('[class*=\'jvm-heap-chart\']').each(function(i, element) {
+        c3.generate({
+            bindto: element,
+            data: {
+                colors: {
+
+                },
+                columns: [
+                    ['JVM',      4,  828],
+                    ['Off-heap', 4,  828],
+                    ['Free',     15, 258],
+                ],
+                type: 'donut',
+                onclick: function (d, i) {
+                    console.log("onclick", d, i);
+                },
+                onmouseover: function (d, i) {
+                    console.log("onmouseover", d, i);
+                },
+                onmouseout: function (d, i) {
+                    console.log("onmouseout", d, i);
+                }
+            },
+            donut: {
+                title: "12 GB"
+            },
+            legend: {
+                position: 'bottom'
+            },
+            size: {
+                height: 220
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
