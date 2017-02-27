@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<!--<![endif]-->
+<head>
+    <title>Infinispan Server Management Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="patternfly/img/favicon.ico">
+    <!-- iPad retina icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="patternfly/img/apple-touch-icon-precomposed-152.png">
+    <!-- iPad retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="patternfly/img/apple-touch-icon-precomposed-144.png">
+    <!-- iPad non-retina icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"
+          href="patternfly/img/apple-touch-icon-precomposed-76.png">
+    <!-- iPad non-retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="patternfly/img/apple-touch-icon-precomposed-72.png">
+    <!-- iPhone 6 Plus icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="patternfly/img/apple-touch-icon-precomposed-180.png">
+    <!-- iPhone retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="patternfly/img/apple-touch-icon-precomposed-114.png">
+    <!-- iPhone non-retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="patternfly/img/apple-touch-icon-precomposed-57.png">
+    <link href="patternfly/css/patternfly.min.css" rel="stylesheet" media="screen, print">
+    <link href="patternfly/css/patternfly-additions.min.css" rel="stylesheet" media="screen, print">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen, print">
+    <link href="css/styles.css" rel="stylesheet" media="screen, print">
+
+    <script src="components/jquery/dist/jquery.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="components/matchHeight/jquery.matchHeight-min.js"></script>
+    <script src="components/c3/c3.min.js"></script>
+    <script src="components/d3/d3.min.js"></script>
+
+    <script src="patternfly/js/patternfly.js"></script>
+    <script src="js/globals.js"></script>
+    <style>
+        table.ispn-aligned tr td {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-pf" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="img/brand.svg" alt="Infinispan Server Management Console"/>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+            <li>
+                <a href="#">Status</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="pficon pficon-user"></span>
+                    Brian Johnson <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Another link</a>
+                    </li>
+                    <li>
+                        <a href="#">Something else here</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">More options</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Another link</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">One more separated link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+            <li>
+                <a href="cache-containers.html">Caches</a>
+            </li>
+            <li class="active">
+                <a href="clusters.html">Clusters</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row header-row">
+        <div class="col-sm-12 col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="clusters.html">Clusters</a>
+                </li>
+                <li ><a href="cluster-nodes.html">JDG Cluster #1</a></li>
+                <li ><a href="cluster-endpoints.html">Endpoints</a></li>
+                <li class="active"><strong>Hotrod - default</strong></li>
+            </ol>
+
+            <div class="dropdown pull-right">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown">
+                    ACTIONS
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Refresh</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation" ><a role="menuitem" tabindex="-1" href="#">Disable</a></li>
+                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Enable</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="endpoint-configuration.html">View / Edit configuration</a>
+                    </li>
+                </ul>
+            </div>
+            <h1><span class="label label-success">Available</span> Node #1  <small>IP: 192.168.192.1:5554</small> </h1>
+        </div>
+    </div>
+    <!--div class="cards-pf" style="padding:20px"-->
+    <div style="padding-top: 0px">
+        <div class="row row-cards-pf">
+
+            <!-- BEGIN CARD -->
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="card-pf card-pf-accented ispn-card">
+                    <div class="card-pf-heading">
+                        <h2 class="card-pf-title">Performance</h2>
+                    </div>
+                    <div class="card-pf-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="col-md-12">
+                                    <tr>
+                                        <th>Bytes Read</th>
+                                        <td>35234</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bytes Written</th>
+                                        <td>23423423</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CARD -->
+
+
+            <!-- BEGIN CARD -->
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="card-pf card-pf-accented ispn-card">
+                    <div class="card-pf-heading">
+                        <h2 class="card-pf-title">Socket</h2>
+                    </div>
+                    <div class="card-pf-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="col-md-12">
+                                    <tr>
+                                        <th>Group</th>
+                                        <td>cluster-sockets</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Binding</th>
+                                        <td>hotrod</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CARD -->
+
+        </div>
+</div>
+
+
+<script type="text/javascript">
+    $('.ispn-card').matchHeight({byRow: false});
+</script>
+<script>
+    $('[class*=\'jvm-heap-chart\']').each(function(i, element) {
+        c3.generate({
+            bindto: element,
+            data: {
+                colors: {
+
+                },
+                columns: [
+                    ['JVM',      4,  828],
+                    ['Off-heap', 4,  828],
+                    ['Free',     15, 258],
+                ],
+                type: 'donut',
+                onclick: function (d, i) {
+                    console.log("onclick", d, i);
+                },
+                onmouseover: function (d, i) {
+                    console.log("onmouseover", d, i);
+                },
+                onmouseout: function (d, i) {
+                    console.log("onmouseout", d, i);
+                }
+            },
+            donut: {
+                title: "12 GB"
+            },
+            legend: {
+                position: 'bottom'
+            },
+            size: {
+                height: 220
+            }
+        });
+    });
+</script>
+
+
+<script>
+    // Initialize Datatables
+    $(document).ready(function() {
+        $('#cachesTable').dataTable();
+    });
+</script>
+
+</body>
+</html>

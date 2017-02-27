@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<!--<![endif]-->
+<head>
+    <title>Infinispan Server Management Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="patternfly/img/favicon.ico">
+    <!-- iPad retina icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="patternfly/img/apple-touch-icon-precomposed-152.png">
+    <!-- iPad retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="patternfly/img/apple-touch-icon-precomposed-144.png">
+    <!-- iPad non-retina icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"
+          href="patternfly/img/apple-touch-icon-precomposed-76.png">
+    <!-- iPad non-retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="patternfly/img/apple-touch-icon-precomposed-72.png">
+    <!-- iPhone 6 Plus icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="patternfly/img/apple-touch-icon-precomposed-180.png">
+    <!-- iPhone retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="patternfly/img/apple-touch-icon-precomposed-114.png">
+    <!-- iPhone non-retina icon (iOS < 7) -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="patternfly/img/apple-touch-icon-precomposed-57.png">
+    <link href="patternfly/css/patternfly.min.css" rel="stylesheet" media="screen, print">
+    <link href="patternfly/css/patternfly-additions.min.css" rel="stylesheet"
+          media="screen, print">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          media="screen, print">
+    <link href="css/styles.css" rel="stylesheet" media="screen, print">
+    <script src="components/jquery/dist/jquery.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="patternfly/js/patternfly.js"></script>
+
+    <style>
+        table.ispn-aligned tr td {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<nav class="navbar navbar-default navbar-pf" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="img/brand.svg" alt="Infinispan Server Management Console"/>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+            <li>
+                <a href="#">Status</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="pficon pficon-user"></span>
+                    Brian Johnson <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Another link</a>
+                    </li>
+                    <li>
+                        <a href="#">Something else here</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">More options</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Another link</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">One more separated link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+            <li class="active">
+                <a href="cache-containers.html">Caches</a>
+            </li>
+            <li>
+                <a href="clusters.html">Clusters</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row header-row">
+        <div class="col-sm-12 col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="cluster-nodes.html">Cluster 1</a>
+                </li>
+                <li>
+                    <a href="cluster-endpoints.html">Endpoints</a>
+                </li>
+                <li class="active"><strong>Hotrod configuration</strong></li>
+            </ol>
+
+        </div>
+    </div>
+
+    <h2>View / Edit endpoint configuration:</h2>
+
+    <div class="row" style="padding-top: 20px">
+        <form class="form-horizontal">
+            <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active" role="presentation"><a href="#">General</a></li>
+                    <li role="presentation"><a href="#">Authentication</a></li>
+                    <li role="presentation"><a href="#">Topology state transfer</a></li>
+                    <li role="presentation"><a href="#">Encryption</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+
+
+                <div class="alert alert-success">
+                    <span class="fa fa-filter" title="Persistent"></span> Endpoint properties saved.
+                </div>
+
+                <div class="form-group">
+                        <label class="col-md-2 control-label">Name</label>
+                        <div class="col-md-6" >
+                            <input type="text" class="form-control" name="cacheName" ng-model="data.name" ng-disabled="readOnly" required="" value="Hotrod">
+                        </div>
+                        <div class="col-md-1 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The endpoint name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                        <!-- ngIf: form.cacheName.$invalid && !form.cacheName.$pristine -->
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Cache container</label>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="cacheName" ng-model="data.name" ng-disabled="readOnly" required="" value="Cache container 1">
+                        </div>
+                        <div class="col-md-1 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache container" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Idle timeout</label>
+
+                        <div class="col-md-6">
+                            <input type="text" ng-model="data.template" ng-disabled="readOnly" class="form-control"  value="12345" >
+                        </div>
+                        <div class="col-md-1 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Receive buffer size</label>
+
+                        <div class="col-md-6">
+                            <input type="text" ng-model="data.template" ng-disabled="readOnly" class="form-control" value="12345" >
+                        </div>
+                        <div class="col-md-1 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Send buffer size</label>
+
+                        <div class="col-md-6">
+                            <input type="text" ng-model="data.template" ng-disabled="readOnly" class="form-control"  value="12345">
+                        </div>
+                        <div class="col-md-1 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Socket binding</label>
+
+                        <div class="col-md-6">
+                            <input type="text" ng-model="data.template" ng-disabled="readOnly" class="form-control"  value="hotrod">
+                        </div>
+                        <div class="col-md-1 pull-left" style="padding-left: 0">
+                            <i class="fa fa-info-circle ng-scope" tooltip="The cache name" tooltip-trigger="" tooltip-animation="true" tooltip-placement="top"></i>
+                        </div>
+                    </div>
+
+                <br>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-2">
+                    <button type="button" class="btn btn-primary">Apply changes</button>
+                    <button type="button" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+
+                </div>
+
+        </form>
+
+
+
+      </div>
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>
